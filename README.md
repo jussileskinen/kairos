@@ -38,8 +38,27 @@ is not affiliated with a university, company or other organisation.
 Development happens in a private repository. This public repository describes
 the project; code and findings may be published here later.
 
+## How it works
+
+```mermaid
+flowchart TD
+    A["Event sources<br/>manual entry or importers (e.g. GDELT)"] --> B["Proposed event"]
+    B --> C{"Verified by a person?"}
+    C -- no --> X["Discarded"]
+    C -- yes --> D[("Event catalogue<br/>observation points + time windows")]
+    D --> E["Select countries / networks"]
+    E --> F["Fetch public measurements<br/>IODA: reachability<br/>RIPEstat: routing<br/>Cloudflare Radar: attack traffic"]
+    F --> G["Compare data inside the<br/>event window against normal levels"]
+    G --> H{"Visible effect?"}
+    H -- yes --> I["Record when and how strongly"]
+    H -- no --> J["Record as a null result"]
+    I --> K["Findings"]
+    J --> K
+```
+
 ## Contact
 
 Please open an issue in this repository.
 
 Maintainer: Jussi (V.) Leskinen
+MSc student, University of Jyväskylä (Kokkola University Consortium Chydenius) 
