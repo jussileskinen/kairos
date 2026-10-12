@@ -1,7 +1,5 @@
 # kairos
 
-# Kairos
-
 Kairos is an independent, non-commercial research project that studies how
 geopolitical events relate to disruptive activity on the internet.
 
